@@ -1,0 +1,33 @@
+﻿@model Dio.AgendaDeContatos.MVC.Models.Contato
+
+@{
+    ViewData["Title"] = "Excluir contato";
+}
+
+<h4 style="color: red">Deseja realmente excluir esse contato? Não será possível desfazer esta ação!</h4>
+
+<hr />
+
+<div>
+    <dl class="row">
+        <dt class="mb-2">
+            @Html.DisplayNameFor(x => x.Nome) :
+            @Html.DisplayFor(x => x.Nome)
+        </dt>
+
+        <dt class="mb-2">
+            @Html.DisplayNameFor(x => x.Telefone) :
+            @Html.DisplayFor(x => x.Telefone)
+        </dt>
+
+        <dt class="mb-2">
+            @Html.DisplayNameFor(x => x.Ativo) :
+            @Html.DisplayFor(x => x.Ativo)
+        </dt>
+    </dl>
+</div>
+
+<form method="post" asp-controller="contato" asp-action="deletar-contato" asp-route-id=@Model.Id>
+    <input type="submit" class="btn btn-danger" value="Excluir" />
+    <a class="btn btn-primary" asp-action="Index">Cancelar</a>
+</form>

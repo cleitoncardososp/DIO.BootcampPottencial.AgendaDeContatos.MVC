@@ -1,0 +1,29 @@
+﻿@model Dio.AgendaDeContatos.MVC.Models.Contato
+
+@{
+    ViewData["Title"] = "Detalhes do contato";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <dl class="row">
+        <dt class="mb-2">
+            @Html.DisplayNameFor(x => x.Nome) :
+            @Html.DisplayFor(x => x.Nome)
+        </dt>
+        
+        <dt class="mb-2">
+            @Html.DisplayNameFor(x => x.Telefone) :
+            @Html.DisplayFor(x => x.Telefone)
+        </dt>
+        
+        <dt class="mb-2">
+            @Html.DisplayNameFor(x => x.Ativo) :
+            @Html.DisplayFor(x => x.Ativo)
+        </dt>
+    </dl>
+</div>
+
+<a class="btn btn-primary mt-3" asp-action="Editar" asp-route-id=@Model.Id>Editar</a>
+<a class="btn btn-danger mt-3" asp-action="Index">Cancelar</a>
